@@ -11,6 +11,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
+import { EmployeeSalaryFormComponent } from './components/employee-salary-form/employee-salary-form.component';
 
 const appRoutes: Routes = [
   {
@@ -20,6 +21,10 @@ const appRoutes: Routes = [
   {
     path: 'employee/add',
     component: EmployeeFormComponent
+  },
+  {
+    path: 'employee/add/salary',
+    component: EmployeeSalaryFormComponent
   },
   {
     path: 'employee/:id',
@@ -34,7 +39,8 @@ const appRoutes: Routes = [
     ButtonComponent,
     EmployeesTableComponent,
     EmployeeCardComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    EmployeeSalaryFormComponent
   ],
   imports: [
     BrowserModule,

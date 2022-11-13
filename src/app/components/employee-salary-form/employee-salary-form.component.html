@@ -1,0 +1,26 @@
+<div class="grid place-items-center m-10">
+    <h1 class="text-2xl font-bold mb-5">Update Salary Details</h1>
+    <form 
+        class="grid grid-cols-2 gap-8 bg-neutral-300 p-10 rounded shadow"
+        (ngSubmit)="handleSubmit()"
+    >
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#employee_code">Employee Code</label>
+            <input class="rounded pl-2 h-8" name="employee_code" 
+                id="employee_code" type="text" disabled="true" value={{employee_code}}>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#first_name">First Name</label>
+            <input class="rounded pl-2 h-8" name="first_name"
+                id="first_name" type="text" disabled="true" value={{first_name}}>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#salary">Salary</label>
+            <input class="rounded pl-2 h-8" name="salary" [(ngModel)]="salary"
+                id="first_name" type="text" required>
+        </div>
+        <div class="mx-auto">
+            <app-button text="Submit"></app-button>
+        </div>
+    </form>
+</div>

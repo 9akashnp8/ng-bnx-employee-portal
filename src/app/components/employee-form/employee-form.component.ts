@@ -44,7 +44,10 @@ export class EmployeeFormComponent implements OnInit {
       is_active: this.is_active,
     }
 
-    this.employeeService.addEmployee(newEmployee).subscribe((employee) => this.router.navigate(['employee', employee.id]));
+    this.employeeService.addEmployee(newEmployee).subscribe((employee) => {
+      sessionStorage.setItem('id', employee.id!);
+      this.router.navigate(['/employee/add', 'salary'])
+    });
 
   }
 
