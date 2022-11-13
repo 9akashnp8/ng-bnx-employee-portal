@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bnx-employee-portal-ng';
+  title: string = 'bnx-employee-portal-ng';
 }
