@@ -1,0 +1,54 @@
+<div class="grid place-items-center min-h-screen">
+    <div class="">
+        <div class="flex gap-5">
+            <h2 class="text-3xl mb-5 font-bold mr-auto">{{employee.employee_code}}</h2>
+            <a href="{% url 'update_employee' employee.id %}">
+                <button class="bg-neutral-800 hover:bg-neutral-500 text-white p-2 rounded shadow">Edit</button>
+            </a>
+            <a href="{% url 'delete_employee' employee.id %}">
+                <button class="bg-neutral-800 hover:bg-neutral-500 text-white p-2 rounded shadow">Delete</button>
+            </a>
+        </div>
+        <div class="flex flex-col">
+            <div class="grid grid-cols-2 gap-3 mb-5 bg-neutral-400 p-5 rounded shadow">
+                <div>
+                    <span class="font-medium">First Name</span>: {{employee.first_name}}
+                </div>
+                <div>
+                    <span class="font-medium">Last Name</span>: {{employee.last_name}}
+                </div>
+                <div>
+                    <span class="font-medium">Designation</span>: {{employee.designation}}
+                </div>
+                <div>
+                    <span class="font-medium">Department</span>: {{employee.department}}
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3 mb-5 bg-neutral-400 p-5 rounded shadow">
+                <div>
+                    <span class="font-medium">Phone Number</span>: {{employee.phone}}
+                </div>
+                <div>
+                    <span class="font-medium">Email ID</span>: {{employee.email}}
+                </div>
+                <div>
+                    <span class="font-medium">Branch</span>: {{employee.branch}}
+                </div>
+                <div>
+                    <span class="font-medium">Current Salary</span>: {{employee.salary}}
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3 mb-5 bg-neutral-400 p-5 rounded shadow">
+                <div>
+                    <span class="font-medium">Date of Joining</span>: {{employee.date_of_joining}}
+                </div>
+                <div>
+                    <span class="font-medium">Date of Exit</span>: {{employee.date_of_exit}}
+                </div>
+                <div>
+                    <span class="font-medium">Status</span>: {{employee.is_active}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
