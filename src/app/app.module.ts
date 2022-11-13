@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -9,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
 import { EmployeesTableComponent } from './components/employees-table/employees-table.component';
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
+import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 
 const appRoutes: Routes = [
   {
@@ -16,9 +18,13 @@ const appRoutes: Routes = [
     component: EmployeesTableComponent
   },
   {
+    path: 'employee/add',
+    component: EmployeeFormComponent
+  },
+  {
     path: 'employee/:id',
     component: EmployeeCardComponent
-  }
+  },
 ]
 
 @NgModule({
@@ -27,12 +33,14 @@ const appRoutes: Routes = [
     HeaderComponent,
     ButtonComponent,
     EmployeesTableComponent,
-    EmployeeCardComponent
+    EmployeeCardComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(appRoutes, {enableTracing: true})
+    RouterModule.forRoot(appRoutes, {enableTracing: true}),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
