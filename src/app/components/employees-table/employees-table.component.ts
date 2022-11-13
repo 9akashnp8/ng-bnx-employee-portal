@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { EMPLOYEES } from 'src/app/mock-employees';
 import { Employee } from 'src/app/Employee';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
   selector: 'app-employees-table',
@@ -8,11 +8,12 @@ import { Employee } from 'src/app/Employee';
   styleUrls: ['./employees-table.component.css']
 })
 export class EmployeesTableComponent implements OnInit {
-  employees: Employee[] = EMPLOYEES;
+  employees: Employee[] = [];
 
-  constructor() { }
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
+    this.employeeService.getEmployees().subscribe((employees) => this.employees = employees);
   }
 
 }
