@@ -1,0 +1,24 @@
+<div class="mx-10 mt-10">
+    <table class="w-full text-center">
+        <thead>
+            <tr class="bg-neutral-400 text-black dark:bg-neutral-800 dark:text-white border-b-2 border-neutral-500">
+                <th class="py-3 font-medium">Employee Code</th>
+                <th class="py-3 font-medium">Full Name</th>
+                <th class="py-3 font-medium">Department</th>
+                <th class="py-3 font-medium">Designation</th>
+                <th class="py-3 font-medium">Action</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let employee of employees">
+            <tr class="bg-neutral-200 text-black dark:bg-neutral-300">
+                <td class="border border-neutral-500 p-1">{{employee.employee_code}}</td>
+                <td class="border border-neutral-500 p-1">{{employee.first_name}} {{employee.last_name}}</td>
+                <td class="border border-neutral-500 p-1">{{employee.department}}</td>
+                <td class="border border-neutral-500 p-1">{{employee.designation}}</td>
+                <td class="border border-neutral-500 p-1">
+                    <a>Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
