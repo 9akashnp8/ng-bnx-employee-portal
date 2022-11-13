@@ -7,7 +7,7 @@ import { Employee } from '../Employee';
   providedIn: 'root'
 })
 export class EmployeeService {
-  private apiUrl = 'http://127.0.0.1:8000/api/employee/'
+  private apiUrl = 'https://ng-bnx.akashnp.dev/api/employee/'
 
   constructor(private http:HttpClient) { }
 
@@ -20,10 +20,10 @@ export class EmployeeService {
   }
 
   getEmployeeForSalaryUpdate(id: string): Observable<Employee> {
-    return this.http.get<Employee>(`http://127.0.0.1:8000/api/employee/${id}`)
+    return this.http.get<Employee>(`https://ng-bnx.akashnp.dev/api/employee/${id}`)
   }
 
   updateEmployeeSalary(id: string, payload: Object): Observable<Employee> {
-    return this.http.patch<Employee>(`http://127.0.0.1:8000/api/employee/${id}/`, payload)
+    return this.http.patch<Employee>(`https://ng-bnx.akashnp.dev/api/employee/${id}/`, payload)
   }
 }
