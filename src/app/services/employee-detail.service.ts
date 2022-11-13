@@ -7,11 +7,10 @@ import { Employee } from '../Employee';
   providedIn: 'root'
 })
 export class EmployeeDetailService {
-  private apiUrl = 'http://127.0.0.1:8000/api/employee/'
 
   constructor(private http: HttpClient) { }
 
-  getEmployeeDetail(): Observable<Employee> {
-    return this.http.get<Employee>(this.apiUrl);
+  getEmployeeDetail(id: string): Observable<Employee> {
+    return this.http.get<Employee>(`http://127.0.0.1:8000/api/employee/${id}`);
   }
 }

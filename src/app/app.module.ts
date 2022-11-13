@@ -16,7 +16,7 @@ const appRoutes: Routes = [
     component: EmployeesTableComponent
   },
   {
-    path: 'employee-detail',
+    path: 'employee/:id',
     component: EmployeeCardComponent
   }
 ]
