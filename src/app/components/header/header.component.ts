@@ -12,4 +12,15 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  handleAddNewEmployee() {
+    console.log("Adding New Employee");
+  }
+
+  handleViewAllEmployees() {
+    console.log("Viewing all employees");
+  }
+
+  handleLogout() {
+    console.log("handle log out");
+  }
 }
