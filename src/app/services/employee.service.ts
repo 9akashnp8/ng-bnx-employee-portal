@@ -26,4 +26,8 @@ export class EmployeeService {
   updateEmployeeSalary(id: string, payload: Object): Observable<Employee> {
     return this.http.patch<Employee>(`https://ng-bnx.akashnp.dev/api/employee/${id}/`, payload)
   }
+
+  deleteEmployee(id: string): Observable<Employee> {
+    return this.http.delete<Employee>(`https://ng-bnx.akashnp.dev/api/employee/${id}/`)
+  }
 }

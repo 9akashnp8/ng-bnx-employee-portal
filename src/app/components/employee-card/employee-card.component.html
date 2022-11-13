@@ -1,52 +1,58 @@
 <div class="grid place-items-center min-h-screen">
     <div class="">
         <div class="flex gap-5">
-            <h2 class="text-3xl mb-5 font-bold mr-auto">{{employee.employee_code}}</h2>
-            <a href="{% url 'update_employee' employee.id %}">
-                <button class="bg-neutral-800 hover:bg-neutral-500 text-white p-2 rounded shadow">Edit</button>
+            <h2 class="text-3xl mb-5 font-bold mr-auto">{{employee.employee_code ? employee.employee_code : '' }}</h2>
+            <a>
+                <button 
+                    class="bg-neutral-800 hover:bg-neutral-500 text-white p-2 rounded shadow"
+                    (click)="handleEdit(employee.id!)"
+                >Edit</button>
             </a>
-            <a href="{% url 'delete_employee' employee.id %}">
-                <button class="bg-neutral-800 hover:bg-neutral-500 text-white p-2 rounded shadow">Delete</button>
+            <a>
+                <button 
+                    class="bg-neutral-800 hover:bg-neutral-500 text-white p-2 rounded shadow"
+                    (click)="handleDelete(employee.id!)"
+                >Delete</button>
             </a>
         </div>
         <div class="flex flex-col">
             <div class="grid grid-cols-2 gap-3 mb-5 bg-neutral-400 p-5 rounded shadow">
                 <div>
-                    <span class="font-medium">First Name</span>: {{employee.first_name}}
+                    <span class="font-medium">First Name</span>: {{ employee.first_name ? employee.first_name : '' }}
                 </div>
                 <div>
-                    <span class="font-medium">Last Name</span>: {{employee.last_name}}
+                    <span class="font-medium">Last Name</span>: {{ employee.last_name ? employee.last_name : '' }}
                 </div>
                 <div>
-                    <span class="font-medium">Designation</span>: {{employee.designation}}
+                    <span class="font-medium">Designation</span>: {{employee.designation ? employee.designation : ''}}
                 </div>
                 <div>
-                    <span class="font-medium">Department</span>: {{employee.department}}
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-3 mb-5 bg-neutral-400 p-5 rounded shadow">
-                <div>
-                    <span class="font-medium">Phone Number</span>: {{employee.phone}}
-                </div>
-                <div>
-                    <span class="font-medium">Email ID</span>: {{employee.email}}
-                </div>
-                <div>
-                    <span class="font-medium">Branch</span>: {{employee.branch}}
-                </div>
-                <div>
-                    <span class="font-medium">Current Salary</span>: {{employee.salary}}
+                    <span class="font-medium">Department</span>: {{employee.department ? employee.department : '' }}
                 </div>
             </div>
             <div class="grid grid-cols-2 gap-3 mb-5 bg-neutral-400 p-5 rounded shadow">
                 <div>
-                    <span class="font-medium">Date of Joining</span>: {{employee.date_of_joining}}
+                    <span class="font-medium">Phone Number</span>: {{employee.phone ? employee.phone : ''}}
                 </div>
                 <div>
-                    <span class="font-medium">Date of Exit</span>: {{employee.date_of_exit}}
+                    <span class="font-medium">Email ID</span>: {{employee.email ? employee.email : '' }}
                 </div>
                 <div>
-                    <span class="font-medium">Status</span>: {{employee.is_active}}
+                    <span class="font-medium">Branch</span>: {{employee.branch ? employee.branch : '' }}
+                </div>
+                <div>
+                    <span class="font-medium">Current Salary</span>: {{employee.salary ? employee.salary : '' }}
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3 mb-5 bg-neutral-400 p-5 rounded shadow">
+                <div>
+                    <span class="font-medium">Date of Joining</span>: {{employee.date_of_joining ? employee.date_of_joining : '' }}
+                </div>
+                <div>
+                    <span class="font-medium">Date of Exit</span>: {{employee.date_of_exit ? employee.date_of_exit : '' }}
+                </div>
+                <div>
+                    <span class="font-medium">Status</span>: {{employee.is_active ? employee.is_active : '' }}
                 </div>
             </div>
         </div>
