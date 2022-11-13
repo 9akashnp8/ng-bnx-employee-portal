@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Employee } from '../Employee';
-import { EMPLOYEES } from 'src/app/mock-employees';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
+  private apiUrl = 'http://127.0.0.1:8000/api/employee/'
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getEmployees(): Observable<Employee[]>  {
-    const employees = of(EMPLOYEES);
-    return employees;
+    return this.http.get<Employee[]>(this.apiUrl);
   }
 }
