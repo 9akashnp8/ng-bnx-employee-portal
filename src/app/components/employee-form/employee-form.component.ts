@@ -29,7 +29,6 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   handleSubmit() {
-    console.log("submit")
     const newEmployee = {
       employee_code: this.employee_code,
       first_name: this.first_name,

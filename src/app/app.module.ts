@@ -12,6 +12,7 @@ import { EmployeesTableComponent } from './components/employees-table/employees-
 import { EmployeeCardComponent } from './components/employee-card/employee-card.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 import { EmployeeSalaryFormComponent } from './components/employee-salary-form/employee-salary-form.component';
+import { EmployeeEditFormComponent } from './components/employee-edit-form/employee-edit-form.component';
 
 const appRoutes: Routes = [
   {
@@ -27,6 +28,10 @@ const appRoutes: Routes = [
     component: EmployeeSalaryFormComponent
   },
   {
+    path: 'employee/:id/edit',
+    component: EmployeeEditFormComponent
+  },
+  {
     path: 'employee/:id',
     component: EmployeeCardComponent
   },
@@ -40,7 +45,8 @@ const appRoutes: Routes = [
     EmployeesTableComponent,
     EmployeeCardComponent,
     EmployeeFormComponent,
-    EmployeeSalaryFormComponent
+    EmployeeSalaryFormComponent,
+    EmployeeEditFormComponent
   ],
   imports: [
     BrowserModule,

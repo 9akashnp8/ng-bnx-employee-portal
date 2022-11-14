@@ -19,7 +19,7 @@ export class EmployeeSalaryFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.employeeService.getEmployeeForSalaryUpdate(this.id).subscribe((employee) => {
+    this.employeeService.getEmployee(this.id).subscribe((employee) => {
       this.employee_code = employee.employee_code;
       this.first_name = employee.first_name;
     })

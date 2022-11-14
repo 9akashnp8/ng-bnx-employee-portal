@@ -28,11 +28,11 @@ export class EmployeeCardComponent implements OnInit {
   }
 
   handleEdit(id: string) {
-    console.log(id);
+    this.router.navigate(['/employee', id, 'edit']);
   }
 
   handleDelete(id: string) {
-    this.employeeService.deleteEmployee(id).subscribe(() => this.router.navigate(['/']))
+    this.employeeService.deleteEmployee(id).subscribe(() => this.router.navigate(['/']));
   }
 
 }

@@ -1,0 +1,77 @@
+<div class="grid place-items-center m-10">
+    <h1 class="text-2xl font-bold mb-5">Add Employee Details</h1>
+    <form 
+        class="grid grid-cols-2 gap-8 bg-neutral-300 p-10 rounded shadow"
+        (ngSubmit)="handleSubmit(employee.id!)"
+    >
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#employee_code">Employee Code</label>
+            <input class="rounded pl-2 h-8" name="employee_code" [(ngModel)]="employee.employee_code" 
+                id="employee_code" type="text" required>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#first_name">First Name</label>
+            <input class="rounded pl-2 h-8" name="first_name" [(ngModel)]="employee.first_name"
+                id="first_name" type="text" required>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#last_name">Last Name</label>
+            <input class="rounded pl-2 h-8" name="last_name" [(ngModel)]="employee.last_name"
+                id="last_name" type="text" required>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#email">Email</label>
+            <input class="rounded pl-2 h-8" name="email" [(ngModel)]="employee.email"
+                id="email" type="email" required>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#phone">Phone Number</label>
+            <input class="rounded pl-2 h-8" name="phone" [(ngModel)]="employee.phone"
+                id="phone" type="tel" required>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#department">Department</label>
+            <select class="rounded pl-2 h-8" name="department" [(ngModel)]="employee.department" id="department">
+                <option value="">Select Department</option>
+                <option value="1">API</option>
+            </select>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#designation">Designation</label>
+            <select class="rounded pl-2 h-8" name="designation" [(ngModel)]="employee.designation" id="designation">
+                <option value="">Select Department</option>
+                <option value="1">API</option>
+            </select>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#branch">Branch</label>
+            <select class="rounded pl-2 h-8" name="branch" [(ngModel)]="employee.branch" id="branch">
+                <option value="">Select Department</option>
+                <option value="1">API</option>
+            </select>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#salary">Salary</label>
+            <input class="rounded pl-2 h-8" name="salary" [(ngModel)]="employee.salary"
+                id="salary" type="text" required>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#date_of_joining">Date of Joining</label>
+            <input class="rounded pl-2 h-8" name="date_of_joining" [(ngModel)]="employee.date_of_joining"
+                id="date_of_joining" type="date" required>
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#date_of_exit">Date of Exit</label>
+            <input class="rounded pl-2 h-8" name="date_of_exit" [(ngModel)]="employee.date_of_exit"
+                id="date_of_exit" type="date">
+        </div>
+        <div class="flex justify-between items-center gap-10">
+            <label class="font-medium" for="#is_active">Is Active</label>
+            <input class="rounded pl-2 h-8" name="is_active" [(ngModel)]="employee.is_active"
+                id="is_active" type="checkbox" required>
+        </div>
+        <div class="mx-auto">
+            <app-button text="Submit"></app-button>
+        </div>
+    </form>
+</div>

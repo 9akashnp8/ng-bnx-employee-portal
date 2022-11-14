@@ -15,16 +15,20 @@ export class EmployeeService {
     return this.http.get<Employee[]>(this.apiUrl);
   }
 
+  getEmployee(id: string): Observable<Employee> {
+    return this.http.get<Employee>(`https://ng-bnx.akashnp.dev/api/employee/${id}`)
+  }
+
   addEmployee(employee: Employee): Observable<Employee> {
     return this.http.post<Employee>(this.apiUrl, employee);
   }
 
-  getEmployeeForSalaryUpdate(id: string): Observable<Employee> {
-    return this.http.get<Employee>(`https://ng-bnx.akashnp.dev/api/employee/${id}`)
-  }
-
   updateEmployeeSalary(id: string, payload: Object): Observable<Employee> {
     return this.http.patch<Employee>(`https://ng-bnx.akashnp.dev/api/employee/${id}/`, payload)
+  }
+
+  updateEmployee(id: string, payload: Object): Observable<Employee> {
+    return this.http.put<Employee>(`https://ng-bnx.akashnp.dev/api/employee/${id}/`, payload)
   }
 
   deleteEmployee(id: string): Observable<Employee> {
