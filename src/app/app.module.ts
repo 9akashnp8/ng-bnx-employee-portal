@@ -53,7 +53,10 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes, {enableTracing: true}),
     FormsModule,
-    HttpClientXsrfModule.withOptions({ cookieName: 'csrftoken', headerName: 'X-CSRFToken'})
+    HttpClientXsrfModule.withOptions({
+      cookieName: 'csrftoken',
+      headerName: 'X-CSRFTOKEN',
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
